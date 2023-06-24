@@ -10,11 +10,11 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      firstName: {
+      first_name: {
         allowNull: false,
         type: DataTypes.STRING(50),
       },
-      lastName: {
+      last_name: {
         allowNull: false,
         type: DataTypes.STRING(50),
       },
@@ -30,6 +30,10 @@ module.exports = {
         allowNull: true,
         type: DataTypes.STRING(100),
       },
+      // password: {
+      //   allowNull: false,
+      //   type: DataTypes.TEXT,
+      // },
       created_at: {
         allowNull: false,
         type: DataTypes.DATE,
