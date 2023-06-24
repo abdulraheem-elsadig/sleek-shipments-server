@@ -11,17 +11,34 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init(
     {
-      firstName: { type: DataTypes.STRING, allowNull: false },
-      lastName: { type: DataTypes.STRING, allowNull: false },
-      email: { type: DataTypes.STRING, allowNull: false, unique: true },
-      password: { type: DataTypes.STRING, allowNull: false },
-      phone: { type: DataTypes.STRING, allowNull: true, unique: true },
-      email: { type: DataTypes.STRING, allowNull: false, unique: true },
+      firstName: {
+        allowNull: false,
+        type: DataTypes.STRING(50),
+      },
+      lastName: {
+        allowNull: false,
+        type: DataTypes.STRING(50),
+      },
+      email: {
+        allowNull: false,
+        type: DataTypes.STRING(255),
+      },
+      phone: {
+        allowNull: true,
+        type: DataTypes.STRING(20),
+      },
+      avatar: {
+        allowNull: true,
+        type: DataTypes.STRING(100),
+      },
     },
     {
       sequelize,
       tableName: "user",
       modelName: "User",
+      timestamps: true,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
     }
   );
   return User;

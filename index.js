@@ -7,7 +7,7 @@ const PORT = 8080;
 app.use("/", (req, res) => res.send("Welcome"));
 
 const startServer = async () => {
-  await sequelize.drop();
+  // await sequelize.drop();
   // await sequelize.sync({ force: true });
   try {
     await sequelize.authenticate();
