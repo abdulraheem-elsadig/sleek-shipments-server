@@ -5,7 +5,6 @@ require("dotenv").config();
 
 exports.signup = async (req, res) => {
   const { first_name, last_name, phone, email, password } = req.body;
-
   const emailExist = await User.findOne({
     where: {
       email,
